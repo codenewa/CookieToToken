@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <button class="btn btn-lg btn-primary" id="btnSayHello">
+                    Say Hello
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <textarea id="txtHello" class="text-center" cols="200" rows="25">
+                </textarea>
+            </div>
+        </div>
+
+    </div>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#btnSayHello').on('click', function () {
+                $.ajax('http://localhost:16723/api/test/sayHello').then(function (response) {
+                    $('#txtHello').text(response);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
