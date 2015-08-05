@@ -16,7 +16,7 @@ namespace TokenBasedWebAPI.Controller
         [Route("hello")]
         [ResponseType(typeof(string))]
         public async Task<IHttpActionResult> SayHello() {
-            return await Task.FromResult<IHttpActionResult>(Ok("Hello World"));
+            return await Task.FromResult<IHttpActionResult>(Ok("Hello World : "+ User.Identity.Name));
         }
 
     }

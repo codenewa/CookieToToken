@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
+using UI.MiddleWare;
 
 namespace TokenBasedWebAPI
 {
@@ -15,6 +16,7 @@ namespace TokenBasedWebAPI
         public void Configuration(IAppBuilder app)
         {
             var config = new HttpConfiguration();
+            app.UseCookieParserMiddleWare();
             app.ConfigureSecurity();
             app.ConfigureWebAPI(config);
         }

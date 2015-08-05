@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using OAuthServer.Provider;
