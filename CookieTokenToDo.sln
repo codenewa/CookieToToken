@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthServer", "OAuthServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenBasedWebAPI", "TokenBasedWebAPI\TokenBasedWebAPI.csproj", "{232B73D2-65A2-476F-8B62-2450A56B7A6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenIdentityApp", "TokenIdentityApp\TokenIdentityApp.csproj", "{91CA1893-C7A1-45D4-8A4B-C15A29BD98F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{232B73D2-65A2-476F-8B62-2450A56B7A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232B73D2-65A2-476F-8B62-2450A56B7A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232B73D2-65A2-476F-8B62-2450A56B7A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91CA1893-C7A1-45D4-8A4B-C15A29BD98F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91CA1893-C7A1-45D4-8A4B-C15A29BD98F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91CA1893-C7A1-45D4-8A4B-C15A29BD98F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91CA1893-C7A1-45D4-8A4B-C15A29BD98F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

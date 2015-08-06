@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
+using TokenBasedWebAPI.Provider;
 using UI.MiddleWare;
 
 namespace TokenBasedWebAPI
@@ -28,7 +29,17 @@ namespace TokenBasedWebAPI
 
         public static void ConfigureSecurity(this IAppBuilder app)
         {
-            app.UseCors(CorsOptions.AllowAll);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+
+            app.UseOAuthAuthorizationServer(new Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerOptions
+            {
+                AllowInsecureHttp = true,
+                TokenEndpointPath=new Microsoft.Owin.PathString("/token"),
+                AccessTokenExpireTimeSpan=TimeSpan.FromDays(1),
+                Provider = new CIRAuthorizationServerProvider()
+            });
+
+            app.UseOAuthBearerAuthentication(new Microsoft.Owin.Security.OAuth.OAuthBearerAuthenticationOptions());
         }
 
         public static void ConfigureWebAPI(this IAppBuilder app, HttpConfiguration config)

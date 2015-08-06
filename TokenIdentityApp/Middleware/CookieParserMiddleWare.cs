@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Security;
 
-namespace UI.MiddleWare
+namespace TokenIdentityApp.MiddleWare
 {
     public class CookieParserMiddleWare
     {
@@ -25,9 +25,9 @@ namespace UI.MiddleWare
             var authCookie = context.Request.Cookies[FormsAuthentication.FormsCookieName];
             var authTicket = FormsAuthentication.Decrypt(authCookie);
             
-
+            
             context.Request.User = new GenericPrincipal(new GenericIdentity(authTicket.UserData), new String[] { });
-
+            context.Authentication.User = new System.Security.Claims.ClaimsPrincipal(context.Request.User);
             await _next(env);
         }
     }

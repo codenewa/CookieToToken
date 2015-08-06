@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+
+            var getURLParams = function (key) {
+                var pageurl = window.location.hash.substring(1);
+                var variables = pageurl.split('&');
+                for (var i = 0; i < variables.length; i++) {
+                    var param = variables[i].split("=");
+                    if (param[0] === key)
+                        return param[1];
+                }
+            };
+
+            window.location = "index.html?token=" + getURLParams("access_token");
+        });
+    </script>
+</body>
+</html>
